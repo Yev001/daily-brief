@@ -1,0 +1,12 @@
+{
+  // Reference config. The live Worker was deployed through the Cloudflare API.
+  "name": "daily-brief",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-11-16",
+  "workers_dev": true,
+  "observability": { "enabled": true },
+  "d1_databases": [{ "binding": "DB", "database_name": "daily-brief", "database_id": "<D1 database id>" }],
+  "vars": { "ALLOWED_EMAIL": "<owner email>" }
+  // Secrets (set with `wrangler secret put`): API_TOKEN_SHA256, LOGIN_KEY_SHA256 (hex SHA-256 of the real values).
+  // Optional vars once Cloudflare Access is on: ACCESS_TEAM_DOMAIN (<team>.cloudflareaccess.com), ACCESS_AUD.
+}
